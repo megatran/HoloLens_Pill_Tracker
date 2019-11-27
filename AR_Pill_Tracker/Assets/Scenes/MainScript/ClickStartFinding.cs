@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class ClickStartFinding : MonoBehaviour, IInputClickHandler
 {
     public NavMeshAgent Agent;
+    public GameObject AgentObject;
     LineRenderer lineRenderer;
     public float RayDistance = 100f;
 
@@ -28,9 +29,15 @@ public class ClickStartFinding : MonoBehaviour, IInputClickHandler
         Vector3 headPosition = cameraTransform.position;
         Vector3 gazeDirection = cameraTransform.up;
 
-        if (Physics.Raycast(objectToFind.transform.position, Vector3.down, out hitInfo, 30.0f, SpatialMappingManager.Instance.LayerMask))
+        //  to prevent problems when the Ray start from inside the searched object (which can happen if for example the Player rests on your platform, penetrating it by a tiny amount).
+        float rayOffset = 0.5f;
+
+        Ray rayPosition = new Ray(objectToFind.transform.position + (Vector3.up * rayOffset), Vector3.down); // FIX: added an offset
+
+        if (Physics.Raycast(rayPosition, out hitInfo, 30.0f+rayOffset, SpatialMappingManager.Instance.LayerMask))
         {
             Debug.Log("HIT");
+            AgentObject.GetComponent<AudioSource>().Play();
             /* Modify the target location so that the object is being perfectly aligned with the ground (if it's flat).*/
             // targetLocation += new Vector3(0, objectToFind.transform.localScale.y / 2, 0);
             if (!Agent.gameObject.activeSelf)
