@@ -38,6 +38,7 @@ Microsoft HoloLens 1 headset
 I used the gesture API from HoloToolKit to enable virtual object manipulation in the application. Users can then perform the air-tap gesture and interact with virtual contents such as selecting buttons or moving blocks around. Additionally, I used the SpatialMapping feature from the same library so the app can find and generate planes based on the spatial mapping data. 
 
 To generate a path in 3D space, I use UnityEngine.AI’s NavMesh and NavMeshAgent components. NavMesh essentially feeds in data from HoloToolkit’s spatial mapping component and denotes areas where a virtual agent can and cannot move (e.g., walkable paths, walls, and obstacles). The NavMeshAgent component utilizes A* path planning algorithm so given two points A and B in a 3D space, it can generate animations so that users see a moving virtual agent leading them from A to B. To visualize the pink path, I use Unity’s LineRenderer.
+
 ![AI engine](img/avatarstair.png)
 
 I decided to track the pill bottles using the HoloLensARToolKit instead of Vuforia due to two reasons: 1) the HoloLensARToolKit has faster Aruco marker tracking and retains a relatively high frame rate. 2) Vuforia significantly slows down the application. 
