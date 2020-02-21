@@ -3,6 +3,8 @@ A mixed reality app that helps users track their pill consumption and find their
 
 Video: https://www.youtube.com/watch?v=2TDfm4LK--I
 
+![Demo 1](img/demo1.gif)
+
 # Inspiration
 Managing medication can be a burden for the elderly and could lead to medication non-adherence. This augmented reality application helps the seniors find the whereabouts of their medication inside the home and track when to take it.
 
@@ -30,6 +32,8 @@ HoloLensARToolKit: https://github.com/qian256/HoloLensARToolKit
 
 
 Microsoft HoloLens 1 headset
+
+![Demo 2](img/demo2.gif)
 
 I used the gesture API from HoloToolKit to enable virtual object manipulation in the application. Users can then perform the air-tap gesture and interact with virtual contents such as selecting buttons or moving blocks around. Additionally, I used the SpatialMapping feature from the same library so the app can find and generate planes based on the spatial mapping data. 
 
