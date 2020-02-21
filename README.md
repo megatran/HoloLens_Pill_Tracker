@@ -17,8 +17,11 @@ When the users select an item and click the button “Find Item”, the applicat
 I developed this application using 
 Unity 2018.3
 HoloToolKit v2017.4.3.0: https://github.com/microsoft/MixedRealityToolkit-Unity/
+
 HoloLensARToolKit: https://github.com/qian256/HoloLensARToolKit
+
 3D Model of virtual agent/character: https://unity-chan.com/download/releaseNote.php?id=SDUnityChan
+
 Microsoft HoloLens 1 headset
 
 I used the gesture API from HoloToolKit to enable virtual object manipulation in the application. Users can then perform the air-tap gesture and interact with virtual contents such as selecting buttons or moving blocks around. Additionally, I used the SpatialMapping feature from the same library so the app can find and generate planes based on the spatial mapping data. 
